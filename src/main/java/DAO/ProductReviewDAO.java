@@ -1,8 +1,7 @@
 package DAO;
 
 import beans.ProductReview;
-import vn.edu.hcmuaf.fit.beans.product.ProductReview;
-import vn.edu.hcmuaf.fit.db.JDBIConnector;
+import db.JDBIConnector;
 
 import java.util.ArrayList;
 import java.util.List;

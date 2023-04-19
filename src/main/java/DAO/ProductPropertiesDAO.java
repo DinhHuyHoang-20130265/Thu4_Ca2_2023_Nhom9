@@ -1,10 +1,10 @@
 package DAO;
 
-import vn.edu.hcmuaf.fit.beans.product.ProductColor;
-import vn.edu.hcmuaf.fit.beans.product.ProductImage;
-import vn.edu.hcmuaf.fit.beans.product.ProductSale;
-import vn.edu.hcmuaf.fit.beans.product.ProductSize;
-import vn.edu.hcmuaf.fit.db.JDBIConnector;
+import beans.ProductColor;
+import beans.ProductImage;
+import beans.ProductSale;
+import beans.ProductSize;
+import db.JDBIConnector;
 
 import java.util.List;
 import java.util.stream.Collectors;
