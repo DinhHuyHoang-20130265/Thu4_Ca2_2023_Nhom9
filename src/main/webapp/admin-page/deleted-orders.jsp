@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Huy Hoang
-  Date: 4/18/2023
-  Time: 9:24 PM
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page import="java.util.List" %>
 <%@ page import="java.text.NumberFormat" %>
 <%@ page import="java.util.Locale" %>
