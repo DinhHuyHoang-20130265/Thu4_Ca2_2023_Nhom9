@@ -1,4 +1,4 @@
-<%@ page import="vn.edu.hcmuaf.fit.beans.product.Product" %>
+<%@ page import="beans.Product" %>
 <%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%List<Product> next6Product = (List<Product>) request.getAttribute("next6Product");%>

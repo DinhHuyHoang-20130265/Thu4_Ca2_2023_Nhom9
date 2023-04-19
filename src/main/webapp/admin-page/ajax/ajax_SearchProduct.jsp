@@ -3,9 +3,7 @@
 <%@ page import="java.text.NumberFormat" %>
 <%@ page import="java.util.Locale" %><%--
   Created by IntelliJ IDEA.
-  User: Admin
-  Date: 12/12/2022
-  Time: 12:29 PM
+
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>

@@ -1,14 +1,12 @@
-<%@ page import="vn.edu.hcmuaf.fit.beans.product.Product" %>
+<%@ page import="beans.Product" %>
 <%@ page import="java.util.List" %>
-<%@ page import="vn.edu.hcmuaf.fit.beans.category.Category" %>
-<%@ page import="vn.edu.hcmuaf.fit.services.CategoryService" %>
-<%@ page import="vn.edu.hcmuaf.fit.beans.AdminUser" %>
-<%@ page import="vn.edu.hcmuaf.fit.beans.AdminRole" %>
-<%@ page import="vn.edu.hcmuaf.fit.services.ProductService" %><%--
+<%@ page import="beans.Category" %>
+<%@ page import="services.CategoryService" %>
+<%@ page import="beans.AdminUser" %>
+<%@ page import="beans.AdminRole" %>
+<%@ page import="services.ProductService" %><%--
   Created by IntelliJ IDEA.
-  User: Huy Hoang
-  Date: 12/11/2022
-  Time: 9:59 PM
+
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
