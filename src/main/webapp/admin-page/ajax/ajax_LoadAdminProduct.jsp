@@ -1,11 +1,5 @@
 <%@ page import="vn.edu.hcmuaf.fit.beans.product.Product" %>
-<%@ page import="java.util.List" %><%--
-  Created by IntelliJ IDEA.
-  User: Huy Hoang
-  Date: 12/11/2022
-  Time: 12:25 PM
-  To change this template use File | Settings | File Templates.
---%>
+<%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%List<Product> next6Product = (List<Product>) request.getAttribute("next6Product");%>
 <%for (Product p : next6Product) {%>
