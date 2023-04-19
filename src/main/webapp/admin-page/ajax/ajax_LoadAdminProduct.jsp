@@ -12,7 +12,7 @@
 <li class="item">
   <div class="item-row">
     <div class="item-col fixed item-col-img xs">
-      <a href="">git
+      <a href="">
         <div class="item-img xs rounded">
           <img src="<%=p.getMain_img_link()%>" width=30px height=30px>
         </div>

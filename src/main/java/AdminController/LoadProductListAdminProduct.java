@@ -1,13 +1,12 @@
 package AdminController;
 
-import vn.edu.hcmuaf.fit.beans.product.Product;
-import vn.edu.hcmuaf.fit.services.ProductService;
+import beans.Product;
 
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import services.ProductService;
+
+import javax.servlet.*;
+import javax.servlet.http.*;
+import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.util.List;
 
@@ -21,9 +20,9 @@ public class LoadProductListAdminProduct extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         /*
-        * Đinh Huy Hoàng - 20130265
-        * Load more sản phẩm giao diện quản lý sản phẩm, kết hợp orderby và tìm kiếm
-        * */
+         * Nguyen Chi Thanh - 20130265
+         * Load more sản phẩm giao diện quản lý sản phẩm, kết hợp orderby và tìm kiếm
+         * */
         String page = request.getParameter("page");
         String orderby = request.getParameter("orderby");
         String search = request.getParameter("search");

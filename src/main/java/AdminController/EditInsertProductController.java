@@ -1,6 +1,6 @@
 package AdminController;
 
-import vn.edu.hcmuaf.fit.services.ProductService;
+import services.ProductService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -20,7 +20,7 @@ public class EditInsertProductController extends HttpServlet {
         doPost(request, response);
     }
     /*
-       Thêm/sửa product trong admin - Đinh Huy Hoàng 20130265
+       Thêm/sửa product trong admin - Nguyen Chi Thanh 20130403
     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
