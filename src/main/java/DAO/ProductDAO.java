@@ -1,5 +1,17 @@
 package DAO;
 
+
+import beans.Category;
+import beans.Product;
+import beans.ProductColor;
+import beans.ProductImage;
+import beans.ProductReview;
+import beans.ProductSale;
+import beans.ProductSize;
+import db.JDBIConnector;
+import services.CategoryService;
+
+
 import beans.*;
 
 import db.JDBIConnector;
