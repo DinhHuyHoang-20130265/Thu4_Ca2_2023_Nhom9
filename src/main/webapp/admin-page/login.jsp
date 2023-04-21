@@ -53,7 +53,7 @@
             </header>
             <div class="auth-content">
                 <p class="text-center">Đăng nhập để tiếp tục</p>
-                <form id="login-form" action="/Thu4_Ca2_2023_Nhom9_war/LoginAdminController" method="GET" novalidate="">
+                <form id="login-form" action="../LoginAdminController" method="GET" novalidate="">
                     <div class="form-group">
                         <label for="username">Tên tài khoản</label>
                         <input type="username" class="form-control underlined" name="username" id="username"
