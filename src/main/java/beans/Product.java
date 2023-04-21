@@ -1,5 +1,10 @@
 package beans;
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> e51488a448ca5b85e4d5d6cc518fc0ac7db86840
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;

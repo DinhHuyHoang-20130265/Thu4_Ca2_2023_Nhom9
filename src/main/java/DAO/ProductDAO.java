@@ -1,5 +1,6 @@
 package DAO;
 
+
 import beans.Category;
 import beans.Product;
 import beans.ProductColor;
@@ -10,6 +11,12 @@ import beans.ProductSize;
 import db.JDBIConnector;
 import services.CategoryService;
 
+
+import beans.*;
+
+import db.JDBIConnector;
+import services.CategoryService;
+import DAO.CategoryDAO;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
