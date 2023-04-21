@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Huy Hoang
-  Date: 4/18/2023
-  Time: 9:24 PM
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page import="java.util.List" %>
 <%@ page import="java.text.NumberFormat" %>
 <%@ page import="java.util.Locale" %>
@@ -429,7 +422,7 @@
                 e.preventDefault();
                 $("#yesButton").click(function () {
                     $.ajax({
-                        url: "/CuoiKiWeb_war/RollbackOrderController",
+                        url: "/Thu4_Ca2_2023_Nhom9_war/RollbackOrderController",
                         type: "post",
                         data: {
                             id: id,
@@ -454,7 +447,7 @@
         const order = $("#filter").find(':selected').val();
         const search = $("#searchUser").val();
         $.ajax({
-            url: "/CuoiKiWeb_war/LoadDeletedOrderListAdmin",
+            url: "/Thu4_Ca2_2023_Nhom9_war/LoadDeletedOrderListAdmin",
             type: "post",
             data: {
                 page: page,
@@ -483,7 +476,7 @@
             const order = $("#filter").find(':selected').val();
             const page = 1;
             $.ajax({
-                url: "/CuoiKiWeb_war/LoadDeletedOrderListAdmin",
+                url: "/Thu4_Ca2_2023_Nhom9_war/LoadDeletedOrderListAdmin",
                 type: "post",
                 data: {
                     page: page,
@@ -505,7 +498,7 @@
             const order = $("#filter").find(':selected').val();
             if (page > 0) {
                 $.ajax({
-                    url: "/CuoiKiWeb_war/LoadDeletedOrderListAdmin",
+                    url: "/Thu4_Ca2_2023_Nhom9_war/LoadDeletedOrderListAdmin",
                     type: "post",
                     data: {
                         page: page,
@@ -527,7 +520,7 @@
             const search = $("#searchUser").val();
             const order = $("#filter").find(':selected').val();
             $.ajax({
-                url: "/CuoiKiWeb_war/LoadDeletedOrderListAdmin",
+                url: "/Thu4_Ca2_2023_Nhom9_war/LoadDeletedOrderListAdmin",
                 type: "post",
                 data: {
                     page: page,
