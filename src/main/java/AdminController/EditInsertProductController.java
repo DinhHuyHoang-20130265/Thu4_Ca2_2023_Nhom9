@@ -20,7 +20,7 @@ public class EditInsertProductController extends HttpServlet {
         doPost(request, response);
     }
     /*
-       Thêm/sửa product trong admin - Nguyen Chi Thanh 20130403
+       Thêm/sửa product trong admin - Nguyen Chi Thanh 20130403 / Le Minh Nhat 20130350
     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
