@@ -28,6 +28,7 @@ public class OrderDetailDAO {
             return null;
         });
     }
+    // 4.3.	DAO lấy dữ liệu từ database.
     public List<OrderDetail> getListDetailsFromOrdId(String id) {
         return JDBIConnector.get().withHandle(handle -> handle.createQuery("SELECT o.ord_id, o.prod_id, o.prod_name, o.prod_color, o.prod_size, o.quantity, o.price" +
                         " FROM order_details o WHERE o.ord_id =?")

@@ -98,6 +98,8 @@ public class OrderDAO {
         });
     }
 
+    // 2.3.	DAO lấy dữ liệu từ database.
+    // 2.6.4.	DAO lấy dữ liệu từ database.
     public List<Order> getOrderListCondition(String page, String orderBy, String search) {
         String sql = "SELECT o.ord_id, o.ord_date, o.status, o.payment_method, o.payment_status, o.delivered, o.isCanceled, o.total, o.delivery_date, o.customer_id, o.address, o.receive_name, o.email, o.phone_number, o.note FROM orders o WHERE o.isCanceled = 1";
         if (search != null) {
@@ -143,6 +145,7 @@ public class OrderDAO {
         );
     }
 
+    //8.	DAO thực hiệp cập nhật dữ liệu trong database.
     public void UpdateOrderStatus(String id) {
         JDBIConnector.get().withHandle(handle -> handle.createUpdate("UPDATE orders SET status= 1 WHERE ord_id= ?")
                 .bind(0, id)

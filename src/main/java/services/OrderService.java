@@ -27,7 +27,11 @@ public class OrderService {
         return new OrderDAO().getOrderById(id);
     }
 
+    // 2.2.	Service gọi đến lớp OrderDAO lấy dữ liệu tương ứng.
+    // 2.6.3.	Service gọi đến OrderDAO lấy dữ liệu tương ứng.
     public List<Order> getOrderListCondition(String page, String order_by, String search) {
+        // 2.4.	DAO trả danh sách tương ứng cho OrderService.
+        // 2.6.5.	DAO trả danh sách tương ứng cho service.
         return new OrderDAO().getOrderListCondition(page, order_by, search);
     }
 
@@ -35,6 +39,7 @@ public class OrderService {
         new OrderDAO().UpdatePaymentStatus(id);
     }
 
+    //7.	Service gọi đến OrderDAO thực hiện cập nhật.
     public void UpdateOrderStatus(String id) {
         new OrderDAO().UpdateOrderStatus(id);
     }

@@ -21,12 +21,15 @@ public class LoadOrderListAdmin extends HttpServlet {
     Load more danh sách đơn hàng trong admin - Đinh Huy Hoàng 20130265
     */
     @Override
+    // 2.6.2.	Lấy dữ liệu theo yêu cầu từ OrderService.
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String page = request.getParameter("page");
         String search = request.getParameter("search");
         String order = request.getParameter("order");
+        // 2.6.6.	Service trả danh sách6 đơn hàng tương ứng cho lớp xử lý.
         List<Order> orderList = OrderService.getInstance().getOrderListCondition(page, order, search);
         request.setAttribute("orders", orderList);
+        // 2.6.7.	Lớp xử lý hiển thị danh sách 6 đơn hàng trước đó hoặc tiếp theo lên giao diện.
         request.getRequestDispatcher("/admin-page/ajax/ajax_LoadOrderListAdmin.jsp").forward(request, response);
     }
 }

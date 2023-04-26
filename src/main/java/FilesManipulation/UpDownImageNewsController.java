@@ -12,13 +12,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.IOException;
-import java.io.Serial;
 import java.util.Iterator;
 import java.util.List;
 
 @WebServlet(name = "UpDownImageNewsController", value = "/UpDownImageNewsController")
 public class UpDownImageNewsController extends HttpServlet {
-    @Serial
     private static final long serialVersionUID = 2L;
     private ServletFileUpload uploader = null;
 
