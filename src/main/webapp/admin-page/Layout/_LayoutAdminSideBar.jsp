@@ -52,7 +52,10 @@
                             <a href="#"> Đơn hàng <i class="fa arrow"></i></a>
                             <ul class="sidebar-nav">
                                 <li>
+                                <%-- Bước 1.	Admin chọn "Danh sách đơn hàng" ở menu bên trái.--%>
+                                    <%-- Bước 2.    Trang web chuyển giao diện đến trang danh sách đơn hàng.--%>
                                     <a href="orders-list.jsp"> Danh sách đơn hàng </a>
+
                                 </li>
                             </ul>
                         </li>

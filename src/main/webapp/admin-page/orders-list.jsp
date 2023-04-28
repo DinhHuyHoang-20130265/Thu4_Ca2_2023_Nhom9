@@ -172,10 +172,12 @@
                                         </tr>
                                         </thead>
                                         <tbody>
+                                        <%-- 2.1.	Web gọi đến OrderService lấy dữ liệu 6 đơn hàng đầu tiên. --%>
                                         <%
                                             List<Order> orders = OrderService.getInstance().getOrderListCondition("1", "0", null);
                                             NumberFormat formatter = NumberFormat.getInstance(new Locale("vn", "VN"));
                                             if (orders != null) {
+                                                // 2.5.	Hiển thị danh sách 6 đơn hàng đầu tiên lên giao diện danh sách.
                                                 for (Order order : orders) {
                                                     SiteUser siteUser = AccountService.getInstance().getAccountById(order.getCustomer_id()); %>
                                         <tr class="order" id="order<%=order.getOrd_id()%>">
@@ -185,6 +187,8 @@
                                                 </svg>
                                             </td>
                                             <td class="no-wrap pl-0">
+<%--                                                3.	Admin chọn đơn hàng của đơn hàng cần được cập nhật trạng thái.--%>
+<%--                                                4.	Trang web chuyển đến giao diện chi tiết đơn hàng của đơn hàng tương ứng.--%>
                                                 <a href="order-details.jsp?id=<%=order.getOrd_id()%>">#<%=order.getOrd_id()%>
                                                 </a>
                                                 <div class="d-inline-block">
@@ -436,6 +440,7 @@
             filterAdmin(e);
             deleteOrder();
         })
+
         $("#searchUser").on("input", function (e) {
             e.preventDefault();
             const search = this.value;
@@ -456,6 +461,8 @@
                 }
             })
         })
+        // 2.6.	Chọn nút mũi tên trái hoặc phải ở giao diện để xem tiếp 6 đơn hàng trước đó hoặc tiếp theo.
+        // Đây là trường hợp xem 6 đơn hàng trước đó (nút mũi tên trái)
         $("#btn_prev").on("click", function (e) {
             e.preventDefault();
             const search = $("#searchUser").val();
@@ -463,6 +470,7 @@
             const order = $("#filter").find(':selected').val();
             if (page > 0) {
                 $.ajax({
+                    // 2.6.1.	Gọi đến lớp xử lý LoadOrderListAdmin yêu cầu hiển thị 6 đơn hàng.
                     url: "/Thu4_Ca2_2023_Nhom9_war/LoadOrderListAdmin",
                     type: "post",
                     data: {
@@ -478,12 +486,14 @@
                 })
             }
         })
+        // Đây là trường hợp xem 6 đơn hàng tiếp theo (nút mũi tên phải)
         $("#btn_next").on("click", function (e) {
             e.preventDefault();
             const page = parseInt($("#page").text()) + 1;
             const search = $("#searchUser").val();
             const order = $("#filter").find(':selected').val();
             $.ajax({
+                // 2.6.1.	Gọi đến lớp xử lý LoadOrderListAdmin yêu cầu hiển thị 6 đơn hàng.
                 url: "/Thu4_Ca2_2023_Nhom9_war/LoadOrderListAdmin",
                 type: "post",
                 data: {
