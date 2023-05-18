@@ -23,6 +23,7 @@ public class UpdateDeliveryStatus extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String id = request.getParameter("id");
         String status = request.getParameter("status");
+        // 6.	Gọi đến lớp OrderSerivce để cập nhật đơn hàng tương ứng.
         OrderService.getInstance().UpdateDeliveryStatus(id, status);
     }
 }

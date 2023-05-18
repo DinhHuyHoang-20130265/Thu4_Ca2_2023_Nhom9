@@ -16,7 +16,9 @@ public class AccountService {
             accountService = new AccountService();
         return accountService;
     }
-
+    public void AddNewAccount(String id, String fullname, String email, String username, String password, String address, String status, String role, String permission, String nameFile, String adminId) {
+        new AccountUserDAO().AddNewAccount(id, fullname, email, username, password, address, status, role, permission, nameFile, adminId);
+    }
     public int getAccountRole(String id) {
         return new AccountUserDAO().getAccountRole(id);
     }
