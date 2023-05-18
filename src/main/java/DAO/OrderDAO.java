@@ -137,7 +137,7 @@ public class OrderDAO {
         }
         return temp;
     }
-
+    //8.	DAO thực hiệp cập nhật dữ liệu trong database.
     public void UpdatePaymentStatus(String id) {
         JDBIConnector.get().withHandle(handle -> handle.createUpdate("UPDATE orders SET payment_status= 1 WHERE ord_id= ?")
                 .bind(0, id)
@@ -152,7 +152,7 @@ public class OrderDAO {
                 .execute()
         );
     }
-
+    //8.	DAO thực hiệp cập nhật dữ liệu trong database.
     public void UpdateDeliveryStatus(String id, String status) {
         JDBIConnector.get().withHandle(handle -> handle.createUpdate("UPDATE orders SET delivered= ? WHERE ord_id= ?")
                 .bind(0, Integer.parseInt(status))

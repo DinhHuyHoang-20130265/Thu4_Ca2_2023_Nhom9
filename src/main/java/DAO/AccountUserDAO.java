@@ -19,6 +19,41 @@ public class AccountUserDAO {
         );
     }
 
+    public void AddNewAccount(String id, String fullname, String email, String username, String password, String address, String status, String role, String permission, String nameFile, String adminId) {
+        String idUser = new SignUpDAO().generateIdUser();
+        JDBIConnector.get().withHandle(handle -> {
+            handle.createUpdate("INSERT INTO user_account(id, username, pass, role, account_status) VALUES (?, ?, ?, ?, ?)")
+                    .bind(0, idUser)
+                    .bind(1, username)
+                    .bind(2, MD5.md5(password))
+                    .bind(3, Integer.parseInt(role))
+                    .bind(4, Integer.parseInt(status))
+                    .execute();
+            handle.createUpdate("INSERT INTO account_information(id, full_name, email, phone_number, address, avatar_link, created_date, created_by) values (?, ?, ?, ? , ? , ?, CURDATE(), ?)")
+                    .bind(0, idUser)
+                    .bind(1, fullname)
+                    .bind(2, email)
+                    .bind(3, "")
+                    .bind(4, address)
+                    .bind(5, (nameFile == null || nameFile.equals("")) ? "" : "http://localhost:8080/CuoiKiWeb_war/assets/img/logo/" + nameFile)
+                    .bind(6, adminId)
+                    .execute();
+            if (role.equals("1")) {
+                String finaS = permission.substring(0, permission.length());
+                String[] values = finaS.split(",");
+                for (String val : values) {
+                    String[] splited = val.split("-");
+                    handle.createUpdate("INSERT INTO admin_permission values (?, ?, ?)")
+                            .bind(0, idUser)
+                            .bind(1, splited[0])
+                            .bind(2, splited[1])
+                            .execute();
+                }
+            }
+            return null;
+        });
+    }
+
     public void Remove(String id) {
         JDBIConnector.get().withHandle(handle -> {
                     handle.execute("SET FOREIGN_KEY_CHECKS=0");

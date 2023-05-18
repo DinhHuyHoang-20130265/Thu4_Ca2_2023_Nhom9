@@ -34,7 +34,7 @@ public class OrderService {
         // 2.6.5.	DAO trả danh sách tương ứng cho service.
         return new OrderDAO().getOrderListCondition(page, order_by, search);
     }
-
+    //7.	Service gọi đến OrderDAO thực hiện cập nhật.
     public void UpdatePaymentStatus(String id) {
         new OrderDAO().UpdatePaymentStatus(id);
     }
@@ -43,7 +43,7 @@ public class OrderService {
     public void UpdateOrderStatus(String id) {
         new OrderDAO().UpdateOrderStatus(id);
     }
-
+    //7.	Service gọi đến OrderDAO thực hiện cập nhật.
     public void UpdateDeliveryStatus(String id, String status) {
         new OrderDAO().UpdateDeliveryStatus(id, status);
     }

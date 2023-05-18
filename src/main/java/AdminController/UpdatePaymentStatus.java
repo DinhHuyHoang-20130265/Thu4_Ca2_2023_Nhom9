@@ -21,6 +21,7 @@ public class UpdatePaymentStatus extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String id = request.getParameter("id");
+        // 6.	Gọi đến lớp OrderSerivce để cập nhật đơn hàng tương ứng.
         OrderService.getInstance().UpdatePaymentStatus(id);
     }
 }
