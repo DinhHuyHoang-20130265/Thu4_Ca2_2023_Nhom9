@@ -1,4 +1,4 @@
-package vn.edu.hcmuaf.fit.beans.news;
+package beans;
 
 import java.io.Serializable;
 import java.util.Date;

@@ -1,9 +1,9 @@
-<%@ page import="vn.edu.hcmuaf.fit.beans.AdminUser" %>
-<%@ page import="vn.edu.hcmuaf.fit.services.NewsService" %>
-<%@ page import="vn.edu.hcmuaf.fit.beans.news.News" %>
-<%@ page import="vn.edu.hcmuaf.fit.DAO.NewsDAO" %>
+<%@ page import="beans.AdminUser" %>
+<%@ page import="services.NewsService" %>
+<%@ page import="beans.News" %>
+<%@ page import="DAO.NewsDAO" %>
 <%@ page import="java.util.List" %>
-<%@ page import="vn.edu.hcmuaf.fit.beans.AdminRole" %>
+<%@ page import="beans.AdminRole" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!doctype html>
 <html class="no-js" lang="en">

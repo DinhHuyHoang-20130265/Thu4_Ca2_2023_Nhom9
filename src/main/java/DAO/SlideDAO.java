@@ -1,9 +1,9 @@
-package vn.edu.hcmuaf.fit.DAO;
+package DAO;
 
-import vn.edu.hcmuaf.fit.beans.category.Category;
-import vn.edu.hcmuaf.fit.beans.news.NewsComment;
-import vn.edu.hcmuaf.fit.beans.slide.Slide;
-import vn.edu.hcmuaf.fit.db.JDBIConnector;
+import beans.Category;
+import beans.NewsComment;
+import beans.Slide;
+import db.JDBIConnector;
 
 import java.util.ArrayList;
 import java.util.List;

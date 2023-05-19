@@ -1,7 +1,7 @@
-package vn.edu.hcmuaf.fit.DAO;
+package DAO;
 
-import vn.edu.hcmuaf.fit.beans.news.News;
-import vn.edu.hcmuaf.fit.db.JDBIConnector;
+import beans.News;
+import db.JDBIConnector;
 
 import java.util.ArrayList;
 import java.util.List;

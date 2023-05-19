@@ -230,13 +230,14 @@
                                 <i class="fa fa-trash-o"></i>
                             </a>
                         </li>  <%-- 3.Chọn sản phẩm cần cập nhật --%>
-                        <%-- 4.	Trang web chuyển đến giao diện chi tiết sản  phẩm của sản phẩm tương ứng. --%>
+
                         <%
                                 }
                             }
 
                             if (role.getTable().equals("admin") && role.getPermission().equals("admin") || role.getTable().equals("product") && role.getPermission().equals("update")) {
                         %>
+                        <%-- 4.	Trang web chuyển đến giao diện chi tiết sản  phẩm của sản phẩm tương ứng. --%>
                         <li>
                             <a class="edit" href="item-editor.jsp?id=<%=p.getId()%>">
                                 <i class="fa fa-pencil"></i>

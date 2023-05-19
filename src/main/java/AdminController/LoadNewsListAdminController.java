@@ -1,9 +1,9 @@
-package vn.edu.hcmuaf.fit.AdminController;
+package AdminController;
 
-import vn.edu.hcmuaf.fit.beans.news.News;
-import vn.edu.hcmuaf.fit.beans.product.Product;
-import vn.edu.hcmuaf.fit.services.NewsService;
-import vn.edu.hcmuaf.fit.services.ProductService;
+import beans.News;
+import beans.Product;
+import services.NewsService;
+import services.ProductService;
 
 import javax.servlet.*;
 import javax.servlet.http.*;

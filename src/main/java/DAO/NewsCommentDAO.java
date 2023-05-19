@@ -1,9 +1,9 @@
-package vn.edu.hcmuaf.fit.DAO;
+package DAO;
 
-import vn.edu.hcmuaf.fit.beans.SiteUser;
-import vn.edu.hcmuaf.fit.beans.news.NewsComment;
-import vn.edu.hcmuaf.fit.beans.product.Product;
-import vn.edu.hcmuaf.fit.db.JDBIConnector;
+import beans.SiteUser;
+import beans.NewsComment;
+import beans.Product;
+import db.JDBIConnector;
 
 import java.util.ArrayList;
 import java.util.List;

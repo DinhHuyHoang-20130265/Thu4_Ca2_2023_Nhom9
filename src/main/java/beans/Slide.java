@@ -1,4 +1,4 @@
-package vn.edu.hcmuaf.fit.beans.slide;
+package beans;
 
 import java.io.Serializable;
 

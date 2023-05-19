@@ -1,8 +1,8 @@
-package vn.edu.hcmuaf.fit.services;
+package services;
 
-import vn.edu.hcmuaf.fit.DAO.NewsCommentDAO;
-import vn.edu.hcmuaf.fit.beans.news.News;
-import vn.edu.hcmuaf.fit.beans.news.NewsComment;
+import DAO.NewsCommentDAO;
+import beans.News;
+import beans.NewsComment;
 
 import java.util.List;
 

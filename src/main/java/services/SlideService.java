@@ -1,4 +1,4 @@
-package DAO;
+package services;
 
 import DAO.SlideDAO;
 import beans.Slide;

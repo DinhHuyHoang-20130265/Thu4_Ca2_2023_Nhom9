@@ -1,12 +1,12 @@
-<%@ page import="vn.edu.hcmuaf.fit.beans.AdminUser" %>
-<%@ page import="vn.edu.hcmuaf.fit.beans.news.News" %>
+<%@ page import="beans.AdminUser" %>
+<%@ page import="beans.News" %>
 <%@ page import="java.util.List" %>
-<%@ page import="vn.edu.hcmuaf.fit.services.NewsService" %>
-<%@ page import="vn.edu.hcmuaf.fit.beans.news.NewsComment" %>
-<%@ page import="vn.edu.hcmuaf.fit.services.NewsCommentService" %>
-<%@ page import="vn.edu.hcmuaf.fit.services.SlideService" %>
-<%@ page import="vn.edu.hcmuaf.fit.beans.slide.Slide" %>
-<%@ page import="vn.edu.hcmuaf.fit.beans.AdminRole" %>
+<%@ page import="services.NewsService" %>
+<%@ page import="beans.NewsComment" %>
+<%@ page import="services.NewsCommentService" %>
+<%@ page import="services.SlideService" %>
+<%@ page import="beans.Slide" %>
+<%@ page import="beans.AdminRole" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!doctype html>
 <html class="no-js" lang="en">

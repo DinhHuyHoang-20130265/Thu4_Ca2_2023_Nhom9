@@ -1,10 +1,10 @@
-package vn.edu.hcmuaf.fit.services;
+package services;
 
-import vn.edu.hcmuaf.fit.DAO.NewsCommentDAO;
-import vn.edu.hcmuaf.fit.DAO.NewsDAO;
-import vn.edu.hcmuaf.fit.beans.AdminLogin;
-import vn.edu.hcmuaf.fit.beans.news.News;
-import vn.edu.hcmuaf.fit.beans.news.NewsComment;
+import DAO.NewsCommentDAO;
+import DAO.NewsDAO;
+import beans.AdminLogin;
+import beans.News;
+import beans.NewsComment;
 
 import java.util.ArrayList;
 import java.util.List;

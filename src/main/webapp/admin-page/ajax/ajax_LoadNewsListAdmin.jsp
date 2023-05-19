@@ -1,7 +1,7 @@
-<%@ page import="vn.edu.hcmuaf.fit.beans.news.News" %>
+<%@ page import="beans.News" %>
 <%@ page import="java.util.List" %>
-<%@ page import="vn.edu.hcmuaf.fit.beans.AdminRole" %>
-<%@ page import="vn.edu.hcmuaf.fit.beans.AdminUser" %><%--
+<%@ page import="beans.AdminRole" %>
+<%@ page import="beans.AdminUser" %><%--
   Created by IntelliJ IDEA.
   User: Admin
   Date: 1/7/2023
