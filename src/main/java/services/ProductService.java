@@ -64,7 +64,7 @@ public class ProductService {
     public int isProductInOrder(String id) {
         return new ProductDAO().isProductInOrder(id);
     }
-
+    //Thêm sản phẩm LeMinhNhat_20130350
     public void InsertNewProduct(String name, String price, int status, String userid, int quantity, String[] stringSize, String[] stringColor, String idCate, String desc, String content, String[] imgFile) {
         new ProductDAO().InsertNewProduct(name, price, status, userid, quantity, stringSize, stringColor, idCate, desc, content, imgFile);
     }

@@ -4,10 +4,10 @@ package services;
 import DAO.UserInformationDAO;
 import beans.UserInformation;
 
-public class UserInformationService {
-    private static UserInformationService userInformationService;
+    public class UserInformationService {
+        private static UserInformationService userInformationService;
 
-    public static UserInformationService getInstance() {
+        public static UserInformationService getInstance() {
         if (userInformationService == null) {
             userInformationService = new UserInformationService();
         }

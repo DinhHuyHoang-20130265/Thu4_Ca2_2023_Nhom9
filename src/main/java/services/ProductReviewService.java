@@ -16,7 +16,7 @@ public class ProductReviewService {
         return productReviewService;
     }
 
-    public List<ProductReview> getCommentByProductID(String id) {
+        public List<ProductReview> getCommentByProductID(String id) {
         ProductReviewDAO DAO = new ProductReviewDAO();
         return DAO.getCommentsByProductID(id);
     }

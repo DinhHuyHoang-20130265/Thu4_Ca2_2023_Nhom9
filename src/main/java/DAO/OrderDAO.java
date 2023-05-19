@@ -137,7 +137,7 @@ public class OrderDAO {
         }
         return temp;
     }
-
+    //8.	DAO thực hiệp cập nhật dữ liệu trong database.
     public void UpdatePaymentStatus(String id) {
         JDBIConnector.get().withHandle(handle -> handle.createUpdate("UPDATE orders SET payment_status= 1 WHERE ord_id= ?")
                 .bind(0, id)
@@ -152,7 +152,7 @@ public class OrderDAO {
                 .execute()
         );
     }
-
+    //8.	DAO thực hiệp cập nhật dữ liệu trong database.
     public void UpdateDeliveryStatus(String id, String status) {
         JDBIConnector.get().withHandle(handle -> handle.createUpdate("UPDATE orders SET delivered= ? WHERE ord_id= ?")
                 .bind(0, Integer.parseInt(status))
@@ -161,7 +161,7 @@ public class OrderDAO {
         );
     }
 
-    public List<Order> getDeletedOrderListCondition(String page, String order, String search) {
+        public List<Order> getDeletedOrderListCondition(String page, String order, String search) {
         String sql = "SELECT o.ord_id, o.ord_date, o.status, o.payment_method, o.payment_status, o.delivered, o.isCanceled, o.total, o.delivery_date, o.customer_id, o.address, o.receive_name, o.email, o.phone_number, o.note FROM orders o WHERE o.isCanceled = 0";
         if (search != null) {
             if (search.length() > 0) {
