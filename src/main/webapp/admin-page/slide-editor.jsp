@@ -1,11 +1,11 @@
-<%@ page import="vn.edu.hcmuaf.fit.beans.AdminUser" %>
-<%@ page import="vn.edu.hcmuaf.fit.beans.category.Category" %>
-<%@ page import="vn.edu.hcmuaf.fit.services.CategoryService" %>
+<%@ page import="beans.AdminUser" %>
+<%@ page import="beans.Category" %>
+<%@ page import="services.CategoryService" %>
 <%@ page import="java.util.List" %>
-<%@ page import="vn.edu.hcmuaf.fit.beans.slide.Slide" %>
-<%@ page import="vn.edu.hcmuaf.fit.services.SlideService" %>
-<%@ page import="vn.edu.hcmuaf.fit.services.UserInformationService" %>
-<%@ page import="vn.edu.hcmuaf.fit.beans.AdminRole" %>
+<%@ page import="beans.Slide" %>
+<%@ page import="services.SlideService" %>
+<%@ page import="services.UserInformationService" %>
+<%@ page import="beans.AdminRole" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%--
   Created by IntelliJ IDEA.
