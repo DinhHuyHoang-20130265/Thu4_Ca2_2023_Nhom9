@@ -115,7 +115,8 @@ public class ProductDAO {
         }
         return temp;
     }
-
+//2.3 DAO lấy dữ liệu từ database.
+//2.6.4 DAO lấy dữ liệu từ database.
     public List<Product> loadProductWithConditionContainsStatus(int page, int num_per_page, String order_by, String cate_id, String color, String price, String size, String search) {
         String query = "SELECT DISTINCT p.id, p.prod_name, p.prod_desc, p.prod_status, p.main_img_link," + " p.price, p.released_date, p.released_by, p.quantity, p.warranty_day, p.view_count," + " p.updated_date, p.updated_by FROM product p" + " LEFT JOIN color c ON c.prod_id = p.id LEFT JOIN size s ON p.id = s.prod_id" + " INNER JOIN product_from_cate pfc ON pfc.prod_id = p.id" + " WHERE p.prod_status IN (1, 0)";
         if (cate_id != null) {
@@ -192,6 +193,7 @@ public class ProductDAO {
         this.listProduct = listProduct;
     }
 
+    // 4.3. DAO lấy dữ liệu từ database
     public Product getProductHiddenAndDetails(String id) {
         Product product = JDBIConnector.get().withHandle(handle -> handle.createQuery("SELECT p.id, p.prod_name, p.prod_desc, p.content, p.prod_status, p.main_img_link," + " p.price, p.released_date, p.released_by, p.quantity, p.warranty_day, p.view_count," + " p.updated_date, p.updated_by FROM product p " + " WHERE p.id =?").bind(0, id).mapToBean(Product.class).one());
         List<ProductColor> colors;
@@ -302,7 +304,7 @@ public class ProductDAO {
         });
 
     }
-
+    // 9. lớp DAO cập nhật dữ liệu trong database
     public void UpdateProduct(String id, String name, String price, int status, String userid, int quantity, String[] stringSize, String[] stringColor, String idCate, String desc, String content, String[] imgFile) {
         String[] listCate = CategoryService.getInstance().findParentCateFromParentId(idCate).split(",");
         JDBIConnector.get().withHandle(handle -> {

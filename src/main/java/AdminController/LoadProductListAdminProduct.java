@@ -18,6 +18,7 @@ public class LoadProductListAdminProduct extends HttpServlet {
     }
 
     @Override
+    // 2.6.2. Lấy dữ liệu theo yêu cầu từ ProductService
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         /*
          * Nguyen Chi Thanh - 20130265
@@ -26,8 +27,10 @@ public class LoadProductListAdminProduct extends HttpServlet {
         String page = request.getParameter("page");
         String orderby = request.getParameter("orderby");
         String search = request.getParameter("search");
+        // 2.6.6.	Service trả danh sách 6 sản phẩm tương ứng cho lớp xử lý.
         List<Product> products = ProductService.getInstance().loadProductWithConditionContainsStatus(Integer.parseInt(page), 6, orderby, "all", null, null, null, search);
         request.setAttribute("product", products);
+       // 2.6.7. Hiển thị danh sách 6 sản phẩm tiếp theo hoặc trước đó lên giao diện
         request.getRequestDispatcher("/admin-page/ajax/ajax_LoadProductListAdminProduct.jsp").forward(request, response);
     }
 }
