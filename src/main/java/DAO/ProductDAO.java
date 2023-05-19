@@ -274,7 +274,7 @@ public class ProductDAO {
         if (id.contains(sb.toString())) return generateIdProduct();
         else return sb.toString();
     }
-
+    // Thêm thông tin sản phẩm mới xuống database
     public void InsertNewProduct(String name, String price, int status, String userid, int quantity, String[] stringSize, String[] stringColor, String idCate, String desc, String content, String[] imgFile) {
         String id = generateIdProduct();
         String[] listCate = CategoryService.getInstance().findParentCateFromParentId(idCate).split(",");
