@@ -30,7 +30,7 @@
                             <a href="#"> Sản phẩm<i class="fa arrow"></i></a>
                             <ul class="sidebar-nav">
                                 <li>
-                                    <%-- Bước 1.	Admin chọn "Danh sách đơn hàng" ở menu bên trái.--%>
+                                    <%-- Bước 1.	Admin chọn "Danh sách sản phẩm " ở menu bên trái.--%>
                                     <%-- Bước 2.    Trang web chuyển giao diện đến trang danh sách đơn hàng.--%>
                                     <a href="items-list.jsp"> Danh sách sản phẩm </a>
                                 </li>
