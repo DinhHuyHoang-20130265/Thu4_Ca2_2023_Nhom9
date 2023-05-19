@@ -42,6 +42,8 @@ public class EditInsertProductController extends HttpServlet {
             ProductService.getInstance().InsertNewProduct(name, price, status, userid, quantity, stringSize, stringColor, idCate, desc, content, imgFile);
             removeOldImg(oldImg, request);
             copyImage(request, imgFile);
+
+            //7. Gọi đến ProductService để cập nhật sản phẩm tương ứng
         } else {
             ProductService.getInstance().UpdateProduct(id, name, price, status, userid, quantity, stringSize, stringColor, idCate, desc, content, imgFile);
             removeOldImg(oldImg, request);

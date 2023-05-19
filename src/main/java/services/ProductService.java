@@ -24,9 +24,12 @@ public class ProductService {
     public int getProductSaled(String id) {
         return new ProductDAO().getProductSaled(id);
     }
-
+    //2.2. Service gọi đến lớp ProductDao lấy dữ liệu tương ứng
+    // 2.6.3.	Service gọi đến ProductDAO lấy dữ liệu tương ứng.
     public List<Product> loadProductWithConditionContainsStatus(int page, int num_per_page, String order_by, String category, String color, String price, String size, String search) {
         ProductDAO DAO = new ProductDAO();
+        //2.4 DAO trả danh sách tương ứng cho ProductService.
+        //2.6.5 DAO trả danh sách tương ứng cho ProductService.
         return DAO.loadProductWithConditionContainsStatus(page, num_per_page, order_by, category, color, price, size, search);
     }
 
@@ -42,8 +45,10 @@ public class ProductService {
     }
 
 
+
     public Product getProductAndDetails(String id) {
         ProductDAO DAO = new ProductDAO();
+
         return DAO.getProductAndDetails(id);
     }
 
@@ -65,11 +70,13 @@ public class ProductService {
     }
 
     public void UpdateProduct(String id, String name, String price, int status, String userid, int quantity, String[] stringSize, String[] stringColor, String idCate, String desc, String content, String[] imgFile) {
+       // 8.  Service gọi đế ProductDAO thực hiện cập nhật
         new ProductDAO().UpdateProduct(id, name, price, status, userid, quantity, stringSize, stringColor, idCate, desc, content, imgFile);
     }
-
+    //4.2. Service gọi đến lớp ProductDAO lấy dữ liệu tương ứng
     public Product getProductHiddenAndDetails(String id) {
-        return new ProductDAO().getProductHiddenAndDetails(id);
+        // 4.4.DAO trả dữ liệu tương ứng cho service
+         return new ProductDAO().getProductHiddenAndDetails(id);
     }
 
     public List<Product> loadAllProductContainStatus() {

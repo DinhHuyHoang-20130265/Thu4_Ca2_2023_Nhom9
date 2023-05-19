@@ -113,8 +113,10 @@
             <%
                 Product p = null;
                 if (request.getParameter("id") != null)
+                    // 4.5. Hiển thị chi tiết sản phẩm lên giao diện
                     p = ProductService.getInstance().getProductHiddenAndDetails(request.getParameter("id"));
             %>
+           <!-- 5. Thay đổi các thông tin như tên sản phẩm, mô tả, giá, hình ảnh, sau đó nhấnnút xác nhận -->
             <form name="item" method="post" enctype="multipart/form-data">
                 <input type="text" id="idEdit"
                        value="<%=request.getParameter("id") == null ? "" : request.getParameter("id")%>"
@@ -652,6 +654,7 @@
         })
         const removed = $("#deletedFile").val();
         const oldImg = removed.substring(0, removed.length - 1);
+        // 6.  Gọi đến lớp EditInsertProductController
         $.ajax({
             url: "../EditInsertProductController",
             type: "GET",
@@ -674,6 +677,7 @@
                 if (id.length < 1)
                     alert("Thêm sản phẩm thành công");
                 else
+                 //   10. Hiển thị thông báo cập nhật trạng thái thành công, cập nhật giao diện chi tiết đơn hàng tương ứng, quay trở lại trang danh sách sản phẩm
                     alert("Cập nhật sản phẩm thành công");
                 window.location.href = "items-list.jsp"
             }
