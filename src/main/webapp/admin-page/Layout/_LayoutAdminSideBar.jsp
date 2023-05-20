@@ -85,20 +85,6 @@
                         </li>
                     </ul>
                 </li>
-                <li class="<%=(requestString.indexOf("charts-morris") != -1 || requestString.indexOf("static-tables") != -1) ? "active" : "" %>">
-                    <a href="">
-                        <i class="fa fa-area-chart"></i> Thống kê
-                        <i class="fa arrow"></i>
-                    </a>
-                    <ul class="sidebar-nav">
-                        <li>
-                            <a href="charts-morris.jsp"> Biểu đồ </a>
-                        </li>
-                        <li>
-                            <a href="static-tables.jsp"> Bảng </a>
-                        </li>
-                    </ul>
-                </li>
             </ul>
         </nav>
     </div>

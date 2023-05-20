@@ -393,7 +393,7 @@
                 e.preventDefault();
                 $("#yesButton").click(function () {
                     $.ajax({
-                        url: "/CuoiKiWeb_war/HardDeleteOrderController",
+                        url: "../HardDeleteOrderController",
                         type: "post",
                         data: {
                             id: id,
@@ -422,7 +422,7 @@
                 e.preventDefault();
                 $("#yesButton").click(function () {
                     $.ajax({
-                        url: "/Thu4_Ca2_2023_Nhom9_war/RollbackOrderController",
+                        url: "../RollbackOrderController",
                         type: "post",
                         data: {
                             id: id,
@@ -447,7 +447,7 @@
         const order = $("#filter").find(':selected').val();
         const search = $("#searchUser").val();
         $.ajax({
-            url: "/Thu4_Ca2_2023_Nhom9_war/LoadDeletedOrderListAdmin",
+            url: "../LoadDeletedOrderListAdmin",
             type: "post",
             data: {
                 page: page,
@@ -476,7 +476,7 @@
             const order = $("#filter").find(':selected').val();
             const page = 1;
             $.ajax({
-                url: "/Thu4_Ca2_2023_Nhom9_war/LoadDeletedOrderListAdmin",
+                url: "../LoadDeletedOrderListAdmin",
                 type: "post",
                 data: {
                     page: page,
@@ -498,7 +498,7 @@
             const order = $("#filter").find(':selected').val();
             if (page > 0) {
                 $.ajax({
-                    url: "/Thu4_Ca2_2023_Nhom9_war/LoadDeletedOrderListAdmin",
+                    url: "../LoadDeletedOrderListAdmin",
                     type: "post",
                     data: {
                         page: page,
@@ -520,7 +520,7 @@
             const search = $("#searchUser").val();
             const order = $("#filter").find(':selected').val();
             $.ajax({
-                url: "/Thu4_Ca2_2023_Nhom9_war/LoadDeletedOrderListAdmin",
+                url: "../LoadDeletedOrderListAdmin",
                 type: "post",
                 data: {
                     page: page,

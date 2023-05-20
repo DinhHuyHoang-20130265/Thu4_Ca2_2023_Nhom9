@@ -18,7 +18,7 @@ public class LoadNewsListAdminController extends HttpServlet {
         doPost(request,response);
     }
     /*
-    Load more danh sách tin tức trong admin - Nguyễn Minh Hiếu 20130261
+    Load more danh sách tin tức trong admin - Nguyen CHi THanh 20130403
     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

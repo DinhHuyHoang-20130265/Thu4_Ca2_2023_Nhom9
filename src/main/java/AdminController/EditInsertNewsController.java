@@ -2,7 +2,6 @@ package AdminController;
 
 import beans.AdminUser;
 import services.NewsService;
-import services.SlideService;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -19,10 +18,11 @@ public class EditInsertNewsController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doPost(request, response);
     }
+
     /*
-       Thêm/sửa tin tức trong admin - Nguyễn Minh Hiếu 20130261
+       Thêm/sửa tin tức trong admin - Nguyen CHi Thanh 20130403
     */
-    @Override
+    @Overrides
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String id = request.getParameter("id");
         String title = request.getParameter("title");
@@ -32,17 +32,16 @@ public class EditInsertNewsController extends HttpServlet {
         String oldImg = request.getParameter("oldImg");
         AdminUser admin = (AdminUser) request.getSession().getAttribute("userAdmin");
         String userID = admin.getId();
-        String fullnameFile = "http://localhost:8080/CuoiKiWeb_war/assets/imgNews/news/" + nameFile;
+        String fullnameFile = "http://34.142.249.189/Thu4_Ca2_2023_Nhom9/assets/imgNews/news/" + nameFile;
         if (id == null || id.length() < 1) {
-            NewsService.getInstance().InsertNewNews(title,description,content,fullnameFile,userID);
+            NewsService.getInstance().InsertNewNews(title, description, content, fullnameFile, userID);
             removeOldImg(oldImg, request);
-            copyImage(request, nameFile);
         } else {
-            NewsService.getInstance().UpdateNews(id,title,description,content,fullnameFile,userID);
+            NewsService.getInstance().UpdateNews(id, title, description, content, fullnameFile, userID);
             removeOldImg(oldImg, request);
-            copyImage(request, nameFile);
         }
     }
+
     private void removeOldImg(String oldImg, HttpServletRequest request) {
         if (oldImg.length() > 0) {
             String[] splited = oldImg.split(",");
@@ -51,27 +50,7 @@ public class EditInsertNewsController extends HttpServlet {
                 File fileInServer = new File(request.getServletContext().getAttribute("TEMPNEWS_DIR") + File.separator + split);
                 if (fileInServer.exists())
                     fileInServer.delete();
-                File fileInLocal = new File(request.getServletContext().getAttribute("FILEPNEWS_DIR") + File.separator + split);
-                if (fileInLocal.exists())
-                    fileInLocal.delete();
             }
-        }
-    }
-
-    public void copyImage(HttpServletRequest request, String imgFile) throws IOException {
-        if (imgFile != null) {
-            File file = new File(request.getServletContext().getAttribute("TEMPNEWS_DIR") + File.separator + imgFile);
-            FileInputStream fis = new FileInputStream(file);
-            File local = new File(request.getServletContext().getAttribute("FILEPNEWS_DIR") + File.separator + imgFile);
-            FileOutputStream fos = new FileOutputStream(local);
-            byte[] bytes = new byte[1024];
-            int read;
-            while ((read = fis.read(bytes)) != -1) {
-                fos.write(bytes, 0, read);
-            }
-            fis.close();
-            fos.close();
-
         }
     }
 }

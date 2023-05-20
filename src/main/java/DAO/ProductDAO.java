@@ -281,13 +281,13 @@ public class ProductDAO {
         String id = generateIdProduct();
         String[] listCate = CategoryService.getInstance().findParentCateFromParentId(idCate).split(",");
         JDBIConnector.get().withHandle(handle -> {
-            handle.createUpdate("INSERT INTO product values (?, ?, ?, ?, ?, ?, ?, CURDATE(),?,?, 30, 0, NULL, NULL)").bind(0, id).bind(1, name).bind(2, desc).bind(3, content).bind(4, status).bind(5, (imgFile == null) ? "NULL" : "http://localhost:8080/CuoiKiWeb_war/assets/imgProduct/images/" + imgFile[0]).bind(6, Double.parseDouble(price)).bind(7, userid).bind(8, quantity).execute();
+            handle.createUpdate("INSERT INTO product values (?, ?, ?, ?, ?, ?, ?, CURDATE(),?,?, 30, 0, NULL, NULL)").bind(0, id).bind(1, name).bind(2, desc).bind(3, content).bind(4, status).bind(5, (imgFile == null) ? "NULL" : "http://34.142.249.189/Thu4_Ca2_2023_Nhom9/assets/imgProduct/images/" + imgFile[0]).bind(6, Double.parseDouble(price)).bind(7, userid).bind(8, quantity).execute();
             for (String cate : listCate) {
                 handle.createUpdate("INSERT INTO product_from_cate values (? ,?)").bind(0, cate).bind(1, id).execute();
             }
             if (imgFile != null) {
                 for (int i = 1; i < imgFile.length; i++) {
-                    handle.createUpdate("INSERT INTO img_product VALUES (?, ?)").bind(0, id).bind(1, "http://localhost:8080/CuoiKiWeb_war/assets/imgProduct/images/" + imgFile[i]).execute();
+                    handle.createUpdate("INSERT INTO img_product VALUES (?, ?)").bind(0, id).bind(1, "http://34.142.249.189/Thu4_Ca2_2023_Nhom9/assets/imgProduct/images/" + imgFile[i]).execute();
                 }
             }
             if (stringSize != null) {
@@ -308,7 +308,7 @@ public class ProductDAO {
     public void UpdateProduct(String id, String name, String price, int status, String userid, int quantity, String[] stringSize, String[] stringColor, String idCate, String desc, String content, String[] imgFile) {
         String[] listCate = CategoryService.getInstance().findParentCateFromParentId(idCate).split(",");
         JDBIConnector.get().withHandle(handle -> {
-            handle.createUpdate("UPDATE product SET prod_name = ?, prod_desc = ?, content =?, prod_status =?, main_img_link = ?, " + "price = ?, quantity = ?, updated_date = CURDATE(), updated_by = ? WHERE id = ?").bind(0, name).bind(1, desc).bind(2, content).bind(3, status).bind(4, (imgFile == null || imgFile.length == 0) ? "NULL" : "http://localhost:8080/CuoiKiWeb_war/assets/imgProduct/images/" + imgFile[0]).bind(5, Double.parseDouble(price)).bind(6, quantity).bind(7, userid).bind(8, id).execute();
+            handle.createUpdate("UPDATE product SET prod_name = ?, prod_desc = ?, content =?, prod_status =?, main_img_link = ?, " + "price = ?, quantity = ?, updated_date = CURDATE(), updated_by = ? WHERE id = ?").bind(0, name).bind(1, desc).bind(2, content).bind(3, status).bind(4, (imgFile == null || imgFile.length == 0) ? "NULL" : "http://34.142.249.189/Thu4_Ca2_2023_Nhom9/assets/imgProduct/images/" + imgFile[0]).bind(5, Double.parseDouble(price)).bind(6, quantity).bind(7, userid).bind(8, id).execute();
             handle.createUpdate("DELETE FROM product_from_cate WHERE prod_id = ?").bind(0, id).execute();
             handle.createUpdate("DELETE FROM img_product WHERE prod_id=?").bind(0, id).execute();
             handle.createUpdate("DELETE FROM color WHERE prod_id=?").bind(0, id).execute();
@@ -318,7 +318,7 @@ public class ProductDAO {
             }
             if (imgFile != null) {
                 for (int i = 1; i < imgFile.length; i++) {
-                    handle.createUpdate("INSERT INTO img_product VALUES (?, ?)").bind(0, id).bind(1, "http://localhost:8080/CuoiKiWeb_war/assets/imgProduct/images/" + imgFile[i]).execute();
+                    handle.createUpdate("INSERT INTO img_product VALUES (?, ?)").bind(0, id).bind(1, "http://34.142.249.189/Thu4_Ca2_2023_Nhom9/assets/imgProduct/images/" + imgFile[i]).execute();
                 }
             }
             if (stringSize != null) {

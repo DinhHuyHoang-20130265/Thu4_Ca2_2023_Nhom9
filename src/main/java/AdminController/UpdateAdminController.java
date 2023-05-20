@@ -22,7 +22,7 @@ public class UpdateAdminController extends HttpServlet {
     }
 
     /*
-       Caapj nhata account admin - Đinh Huy Hoàng 20130265
+       Caapj nhata account admin - Đin h Huy Hoàng 20130265
     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -38,7 +38,6 @@ public class UpdateAdminController extends HttpServlet {
 
         AccountService.getInstance().UpdateAdminAccount(id, fullname, email, password, address, phone, nameFile);
         removeOldImg(oldImg, request);
-        copyImage(request, nameFile);
     }
 
     private void removeOldImg(String oldImg, HttpServletRequest request) {
@@ -49,26 +48,7 @@ public class UpdateAdminController extends HttpServlet {
                 File fileInServer = new File(request.getServletContext().getAttribute("TEMPAVATAR_DIR") + File.separator + split);
                 if (fileInServer.exists())
                     fileInServer.delete();
-                File fileInLocal = new File(request.getServletContext().getAttribute("FILEAVATAR_DIR") + File.separator + split);
-                if (fileInLocal.exists())
-                    fileInLocal.delete();
             }
-        }
-    }
-
-    public void copyImage(HttpServletRequest request, String imgFile) throws IOException {
-        if (imgFile != null) {
-            File file = new File(request.getServletContext().getAttribute("TEMPAVATAR_DIR") + File.separator + imgFile);
-            FileInputStream fis = new FileInputStream(file);
-            File local = new File(request.getServletContext().getAttribute("FILEAVATAR_DIR") + File.separator + imgFile);
-            FileOutputStream fos = new FileOutputStream(local);
-            byte[] bytes = new byte[1024];
-            int read;
-            while ((read = fis.read(bytes)) != -1) {
-                fos.write(bytes, 0, read);
-            }
-            fis.close();
-            fos.close();
         }
     }
 }

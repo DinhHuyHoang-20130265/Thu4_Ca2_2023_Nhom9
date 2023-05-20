@@ -41,11 +41,9 @@ public class EditInsertAccountController extends HttpServlet {
         if (id == null || id.length() < 1) {
             AccountService.getInstance().AddNewAccount(id, fullname, email, username, password, address, status, role, permission, nameFile, adminId);
             removeOldImg(oldImg, request);
-            copyImage(request, nameFile);
         } else {
             AccountService.getInstance().UpdateAccount(id, fullname, email, username, password, address, status, role, permission, nameFile, adminId);
             removeOldImg(oldImg, request);
-            copyImage(request, nameFile);
         }
     }
 
@@ -57,26 +55,7 @@ public class EditInsertAccountController extends HttpServlet {
                 File fileInServer = new File(request.getServletContext().getAttribute("TEMPAVATAR_DIR") + File.separator + split);
                 if (fileInServer.exists())
                     fileInServer.delete();
-                File fileInLocal = new File(request.getServletContext().getAttribute("FILEAVATAR_DIR") + File.separator + split);
-                if (fileInLocal.exists())
-                    fileInLocal.delete();
             }
-        }
-    }
-
-    public void copyImage(HttpServletRequest request, String imgFile) throws IOException {
-        if (imgFile != null) {
-            File file = new File(request.getServletContext().getAttribute("TEMPAVATAR_DIR") + File.separator + imgFile);
-            FileInputStream fis = new FileInputStream(file);
-            File local = new File(request.getServletContext().getAttribute("FILEAVATAR_DIR") + File.separator + imgFile);
-            FileOutputStream fos = new FileOutputStream(local);
-            byte[] bytes = new byte[1024];
-            int read;
-            while ((read = fis.read(bytes)) != -1) {
-                fos.write(bytes, 0, read);
-            }
-            fis.close();
-            fos.close();
         }
     }
 }
