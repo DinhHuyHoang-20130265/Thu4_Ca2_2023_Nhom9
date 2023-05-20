@@ -16,4 +16,7 @@
         <param-name>tempavatar.dir</param-name>
         <param-value>Thu4_Ca2_2023_Nhom9/assets/img/logo</param-value>
     </context-param>
+    <welcome-file-list>
+        <welcome-file>admin-page/index.jsp</welcome-file>
+    </welcome-file-list>
 </web-app>
