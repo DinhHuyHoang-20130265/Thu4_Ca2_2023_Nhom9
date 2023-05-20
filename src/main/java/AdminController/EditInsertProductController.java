@@ -19,6 +19,7 @@ public class EditInsertProductController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doPost(request, response);
     }
+
     /*
        Thêm/sửa product trong admin - Nguyen Chi Thanh 20130403 / Le Minh Nhat 20130350
     */
@@ -41,13 +42,11 @@ public class EditInsertProductController extends HttpServlet {
         if (id.length() < 1) {
             ProductService.getInstance().InsertNewProduct(name, price, status, userid, quantity, stringSize, stringColor, idCate, desc, content, imgFile);
             removeOldImg(oldImg, request);
-            copyImage(request, imgFile);
 
             //7. Gọi đến ProductService để cập nhật sản phẩm tương ứng
         } else {
             ProductService.getInstance().UpdateProduct(id, name, price, status, userid, quantity, stringSize, stringColor, idCate, desc, content, imgFile);
             removeOldImg(oldImg, request);
-            copyImage(request, imgFile);
         }
     }
 
@@ -59,27 +58,6 @@ public class EditInsertProductController extends HttpServlet {
                 File fileInServer = new File(request.getServletContext().getAttribute("TEMPPRODUCT_DIR") + File.separator + split);
                 if (fileInServer.exists())
                     fileInServer.delete();
-                File fileInLocal = new File(request.getServletContext().getAttribute("FILEPRODUCT_DIR") + File.separator + split);
-                if (fileInLocal.exists())
-                    fileInLocal.delete();
-            }
-        }
-    }
-
-    public void copyImage(HttpServletRequest request, String[] imgFile) throws IOException {
-        if (imgFile != null) {
-            for (String img : imgFile) {
-                File file = new File(request.getServletContext().getAttribute("TEMPPRODUCT_DIR") + File.separator + img);
-                FileInputStream fis = new FileInputStream(file);
-                File local = new File(request.getServletContext().getAttribute("FILEPRODUCT_DIR") + File.separator + img);
-                FileOutputStream fos = new FileOutputStream(local);
-                byte[] bytes = new byte[1024];
-                int read;
-                while ((read = fis.read(bytes)) != -1) {
-                    fos.write(bytes, 0, read);
-                }
-                fis.close();
-                fos.close();
             }
         }
     }

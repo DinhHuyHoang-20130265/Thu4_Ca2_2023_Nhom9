@@ -1,8 +1,8 @@
-<%@ page import="vn.edu.hcmuaf.fit.beans.AdminUser" %>
-<%@ page import="vn.edu.hcmuaf.fit.services.NewsService" %>
-<%@ page import="vn.edu.hcmuaf.fit.beans.news.News" %>
+<%@ page import="beans.AdminUser" %>
+<%@ page import="services.NewsService" %>
+<%@ page import="beans.News" %>
 <%@ page import="java.util.List" %>
-<%@ page import="vn.edu.hcmuaf.fit.beans.AdminRole" %>
+<%@ page import="beans.AdminRole" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!doctype html>
 <html class="no-js" lang="en">
@@ -300,7 +300,7 @@
                 $("#yes").click(function () {
                     console.log("deleted")
                     $.ajax({
-                        url: "/CuoiKiWeb_war/DeleteNewsControllerAdmin",
+                        url: "../DeleteNewsControllerAdmin",
                         type: "post",
                         data: {
                             id: id,
@@ -324,7 +324,7 @@
             const pageNumb = parseInt($("#pageNumb").text()) - 1;
             if (pageNumb > 0) {
                 $.ajax({
-                    url: "/CuoiKiWeb_war/LoadNewsListAdminController",
+                    url: "../LoadNewsListAdminController",
                     type: "post",
                     data: {
                         pageNumb: pageNumb
@@ -343,7 +343,7 @@
             e.preventDefault();
             const pageNumb = parseInt($("#pageNumb").text()) + 1;
             $.ajax({
-                url: "/CuoiKiWeb_war/LoadNewsListAdminController",
+                url: "../LoadNewsListAdminController",
                 type: "post",
                 data: {
                     pageNumb: pageNumb

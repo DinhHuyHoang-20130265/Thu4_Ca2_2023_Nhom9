@@ -396,7 +396,7 @@
                 e.preventDefault();
                 $("#yesButton").click(function () {
                     $.ajax({
-                        url: "/Thu4_Ca2_2023_Nhom9_war/DeleteOrderController",
+                        url: "../DeleteOrderController",
                         type: "post",
                         data: {
                             id: id,
@@ -420,7 +420,7 @@
         const order = $("#filter").find(':selected').val();
         const search = $("#searchUser").val();
         $.ajax({
-            url: "/Thu4_Ca2_2023_Nhom9_war/LoadOrderListAdmin",
+            url: "../LoadOrderListAdmin",
             type: "post",
             data: {
                 page: page,
@@ -447,7 +447,7 @@
             const order = $("#filter").find(':selected').val();
             const page = 1;
             $.ajax({
-                url: "/Thu4_Ca2_2023_Nhom9_war/LoadOrderListAdmin",
+                url: "../LoadOrderListAdmin",
                 type: "post",
                 data: {
                     page: page,
@@ -471,7 +471,7 @@
             if (page > 0) {
                 $.ajax({
                     // 2.6.1.	Gọi đến lớp xử lý LoadOrderListAdmin yêu cầu hiển thị 6 đơn hàng.
-                    url: "/Thu4_Ca2_2023_Nhom9_war/LoadOrderListAdmin",
+                    url: "../LoadOrderListAdmin",
                     type: "post",
                     data: {
                         page: page,
@@ -494,7 +494,7 @@
             const order = $("#filter").find(':selected').val();
             $.ajax({
                 // 2.6.1.	Gọi đến lớp xử lý LoadOrderListAdmin yêu cầu hiển thị 6 đơn hàng.
-                url: "/Thu4_Ca2_2023_Nhom9_war/LoadOrderListAdmin",
+                url: "../LoadOrderListAdmin",
                 type: "post",
                 data: {
                     page: page,

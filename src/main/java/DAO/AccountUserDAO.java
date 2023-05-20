@@ -35,7 +35,7 @@ public class AccountUserDAO {
                     .bind(2, email)
                     .bind(3, "")
                     .bind(4, address)
-                    .bind(5, (nameFile == null || nameFile.equals("")) ? "" : "http://localhost:8080/CuoiKiWeb_war/assets/img/logo/" + nameFile)
+                    .bind(5, (nameFile == null || nameFile.equals("")) ? "" : "http://34.142.249.189/Thu4_Ca2_2023_Nhom9/assets/img/logo/" + nameFile)
                     .bind(6, adminId)
                     .execute();
             if (role.equals("1")) {
@@ -127,7 +127,7 @@ public class AccountUserDAO {
                     .bind(0, fullname)
                     .bind(1, email)
                     .bind(2, address)
-                    .bind(3, (nameFile == null || nameFile.equals("")) ? "" : "http://localhost:8080/CuoiKiWeb_war/assets/img/logo/" + nameFile)
+                    .bind(3, (nameFile == null || nameFile.equals("")) ? "" : "http://34.142.249.189/Thu4_Ca2_2023_Nhom9/assets/img/logo/" + nameFile)
                     .bind(4, adminId)
                     .bind(5, id)
                     .execute();
@@ -205,7 +205,7 @@ public class AccountUserDAO {
                     .bind(1, email)
                     .bind(2, address)
                     .bind(3, phone)
-                    .bind(4, (nameFile == null || nameFile.equals("")) ? "" : "http://localhost:8080/CuoiKiWeb_war/assets/img/logo/" + nameFile)
+                    .bind(4, (nameFile == null || nameFile.equals("")) ? "" : "http://34.142.249.189/Thu4_Ca2_2023_Nhom9/assets/img/logo/" + nameFile)
                     .bind(5, id)
                     .bind(6, id)
                     .execute();

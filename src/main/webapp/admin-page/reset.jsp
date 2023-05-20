@@ -104,7 +104,7 @@
         const role = $("#role").val();
         $.ajax({
             type: 'POST',
-            url: "/Thu4_Ca2_2023_Nhom9_war/ForgotPasswordAdminController",
+            url: "../ForgotPasswordAdminController",
             data: {
                 email: email,
                 code: code,
@@ -114,7 +114,7 @@
             },
             success: function (response) {
                 if (response.includes("complete"))
-                    window.location.href = "http://localhost:8080/Thu4_Ca2_2023_Nhom9_war/admin-page/login.jsp"
+                    window.location.href = "http://34.142.249.189/Thu4_Ca2_2023_Nhom9/admin-page/login.jsp"
                 else {
                     $("#reset-form-reset").html(response);
                 }
