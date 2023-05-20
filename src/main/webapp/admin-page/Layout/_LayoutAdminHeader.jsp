@@ -28,7 +28,7 @@
                     <span class="name"> <%=admin.getUsername()%> </span>
                 </a>
                 <div class="dropdown-menu profile-dropdown-menu" aria-labelledby="dropdownMenu1">
-                    <a class="dropdown-item" href="/Thu4_Ca2_2023_Nhom9_war/LogoutAdminController">
+                    <a class="dropdown-item" href="/Thu4_Ca2_2023_Nhom9/LogoutAdminController">
                         <i class="fa fa-power-off icon"></i> Đăng xuất </a>
                     <a class="dropdown-item" href="profile.jsp">
                         <i class="fa fa-user icon"></i> Thông tin tài khoản </a>
