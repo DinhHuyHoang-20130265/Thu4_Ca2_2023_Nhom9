@@ -20,9 +20,9 @@ public class EditInsertNewsController extends HttpServlet {
     }
 
     /*
-       Thêm/sửa tin tức trong admin - Đinh Huy Hoanggf 20130265
+       Thêm/sửa tin tức trong admin - Nguyen CHi Thanh 20130403
     */
-    @Override
+    @Overrides
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String id = request.getParameter("id");
         String title = request.getParameter("title");
