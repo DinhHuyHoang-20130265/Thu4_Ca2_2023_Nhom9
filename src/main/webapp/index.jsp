@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Quản lý</title>
 </head>
 <body>
   <%response.sendRedirect("admin-page/index.jsp");%>
